@@ -1,0 +1,19 @@
+@font-face {
+  font-family: syne;
+  src: url("../fonts/Syne-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: poppins;
+  src: url("../fonts/Poppins-Regular.woff");
+}
+
+@font-face {
+  font-family: caviar;
+  src: url("../fonts/CaviarDreams.ttf");
+}
+
+@font-face {
+  font-family: exo;
+  src: url("../fonts/Exo2-Regular.otf");
+}

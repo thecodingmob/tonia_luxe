@@ -1,0 +1,612 @@
+@import url("fonts.css");
+/* css reset by Andy Bell --start-- */
+
+@layer reset {
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+
+  /* Set core root defaults */
+  html {
+    scroll-behavior: smooth;
+  }
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.2;
+  }
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* css reset --end-- */
+
+:root {
+  interpolate-size: allow-keywords;
+  --black: #0d0d0d;
+
+  --coffee: #6f4e37;
+  --coffee-deep: #33241a;
+  --coffee-deep-transparent: #33241a93;
+
+  --cream: #f5ede3;
+
+  --gold: #ffd700;
+  --gold-soft: #d4af37;
+
+  --bg: #f3efe6;
+  --ink: #1d3a36;
+  --accent: #e07a5f;
+  --line: #c9c2b0;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--cream);
+  font-family: syne, sans-serif;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: clamp(1rem, 10vw + 1rem, 5rem);
+  /* line-height: 1.3; */
+}
+
+h2 {
+  font-size: clamp(1rem, 6vw + 1rem, 2.5rem);
+}
+
+section {
+  margin-block-start: 1rem;
+  /* padding: 1rem; */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-inline: 1.5rem;
+  position: relative;
+  padding-block: clamp(1rem, 2vw + 1rem, 2rem);
+}
+
+.logo {
+  font-family: caviar, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+}
+
+nav {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 6px;
+}
+
+nav a {
+  display: inline-block;
+  color: var(--gold);
+  text-decoration: none;
+  padding: 10px;
+  background-color: var(--coffee-deep);
+  border-radius: 6px;
+  border: 1px solid var(--gold);
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: var(--black);
+  background-color: var(--gold);
+}
+
+.hero {
+  text-align: center;
+  display: flex;
+  padding-block: clamp(1rem, 10vw + 1rem, 5rem);
+  align-items: center;
+  justify-content: center;
+  background: url("../images/flat-lay-mascara-false-eyelashes.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--coffee-deep-transparent);
+  z-index: -1;
+}
+
+.hero .wrapper > * {
+  margin-block: 1rem;
+}
+
+/* services section */
+.services-section {
+  padding: 40px;
+  background: url("../images/malama-mushitu-S2QtsqLkysk-unsplash\(1\).jpg");
+  background-position: right;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.services-section::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--coffee-deep-transparent);
+  z-index: -1;
+}
+
+.service {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.services {
+  background-color: var(--coffee-deep);
+  border: 2px solid var(--coffee);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.services > * {
+  margin-block: 0.5rem;
+}
+
+/* booking/cta */
+.booking h2 {
+  font-size: clamp(1rem, 8vw + 1rem, 4rem);
+}
+
+.booking .wrapper > * {
+  margin-block: 1rem;
+}
+
+.cta {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  max-inline-size: 840px;
+  margin-inline: auto;
+  padding: 20px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--gold);
+  background-color: var(--coffee-deep);
+  border: 1px solid var(--coffee-deep);
+  border-radius: 6px;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--coffee-deep-transparent);
+  color: var(--gold);
+}
+
+.btn-2 {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--coffee-deep);
+  background-color: var(--gold);
+  border: 1px solid var(--coffee);
+  border-radius: 6px;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-2:hover {
+  background-color: var(--coffee-deep-transparent);
+  color: var(--gold);
+}
+
+.header-btn {
+  display: inline-block;
+
+  color: var(--coffee-deep);
+  background-color: var(--gold);
+  border-radius: 6px;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+
+  /* width: 100%; */
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header-btn:hover {
+  background-color: var(--coffee-deep);
+  color: var(--gold);
+}
+
+.sample-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.sample {
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu {
+  font-size: 25px;
+}
+
+#menuToggle {
+  background: none;
+  border: none;
+  color: var(--gold);
+}
+
+footer {
+  background-color: var(--coffee-deep);
+}
+
+footer ul {
+  list-style: none;
+}
+
+.footer-header > * {
+  margin-block: 0.5rem;
+}
+
+.footer-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.footer-div > * {
+  flex: 1;
+}
+
+.footer-div .socials ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer a {
+  color: var(--gold);
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.footer-div .quick-links a {
+  font-size: 18px;
+}
+
+.copy {
+  border-top: 2px solid var(--coffee);
+  padding: 20px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.filters button {
+  padding: 10px 16px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background: var(--coffee-deep);
+  color: var(--gold);
+}
+
+.filters button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 1.5rem;
+
+  padding: 1.5rem;
+}
+
+.tab-grid figure {
+  margin: 0;
+}
+
+.tab-grid img {
+  width: 100%;
+  aspect-ratio: 1; /* forces a square, so the grid stays tidy */
+  object-fit: cover; /* crops the image to fill the square, never stretches it */
+  border-radius: 10px;
+  display: block;
+}
+
+.tab-grid img:hover {
+  opacity: 0.6;
+}
+
+.tab-grid figcaption {
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+figcaption {
+  width: 100%;
+  text-align: center;
+}
+
+figcaption a {
+  box-shadow: 0 10px 15px -15px var(--gold);
+}
+
+/* STEP 8: Hiding items.
+       JavaScript adds the class "is-hidden" to items that do not match.
+       "display: none" removes the item and the grid closes the gap. */
+.tab-grid figure.is-hidden {
+  display: none;
+}
+
+/* STEP 9 (bonus): A small fade-in so items do not just pop in.
+       @keyframes describes the animation. The figure plays it each time
+       it becomes visible. */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.tab-grid figure {
+  animation: fadeIn 0.25s ease;
+}
+
+/* Respect people who turn animations off in their phone settings. */
+@media (prefers-reduced-motion: reduce) {
+  .tab-grid figure {
+    animation: none;
+  }
+}
+
+#count {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+@media (min-width: 38em) {
+  .btn,
+  .btn-2 {
+    width: 30%;
+  }
+
+  figcaption a.btn {
+    width: 100%;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .service {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.see-more {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--gold);
+  font-size: 20px;
+  margin-block: 1rem;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
+
+@media (width < 38em) {
+  .cta {
+    flex-direction: column;
+  }
+
+  header {
+    position: sticky;
+    top: 0.5rem;
+    left: 0;
+    z-index: 10;
+    background: var(--coffee-deep-transparent);
+    backdrop-filter: blur(10px);
+
+    max-inline-size: 90%;
+    margin-inline: auto;
+
+    border-radius: 50vw;
+  }
+
+  nav {
+    position: absolute;
+    background: linear-gradient(
+      360deg,
+      var(--coffee-deep),
+      var(--coffee-deep-transparent) 100%
+    );
+    border-radius: 12px;
+    overflow: hidden;
+    inline-size: 90%;
+    left: 5%;
+    padding-inline: 20px;
+    top: 4.92rem;
+    flex-direction: column;
+    gap: 1rem;
+
+    box-shadow: 0 15px 16px -10px var(--coffee-deep-transparent);
+
+    z-index: 1;
+
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+      height 0.3s linear,
+      visibility 0.3s linear,
+      opacity 0.3s linear;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .open {
+    height: 300px;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .footer-div {
+    flex-direction: column;
+  }
+
+  .footer-div .socials ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+}
